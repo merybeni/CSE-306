@@ -45,10 +45,6 @@ int main() {
     subjectPolygon.add(Vector(0.3,0.8,0));
     subjectPolygon.add(Vector(0.5,0.8,0));
 
-    /*subjectPolygon.add(Vector(0.4, 0.8));
-	subjectPolygon.add(Vector(0.6, 0.8));
-	subjectPolygon.add(Vector(0.6, 0.2));
-	subjectPolygon.add(Vector(0.4, 0.2));*/
 
     Polygon clipPolygon;
     clipPolygon.add(Vector(0.1,0.6,0));
@@ -59,7 +55,7 @@ int main() {
     std::vector<Polygon> polygons;
     Polygon clippedPolygon = SutherlandHodgman(subjectPolygon,clipPolygon);
     //polygons.push_back(subjectPolygon);
-	//polygons.push_back(clipPolygon);
+    //polygons.push_back(clipPolygon);
     polygons.push_back(clippedPolygon);
     save_svg(polygons,"poly.svg");
 
