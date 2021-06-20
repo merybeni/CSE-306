@@ -54,6 +54,7 @@ Vector scalar_product(const Vector& a, double s){
     return Vector(s*a[0],s*a[1],s*a[2]);
 }
 
+
 Vector get_vector_two_points(const Vector& a,const Vector& b){
     return Vector(b[0]-a[0],b[1]-a[1],b[2]-a[2]);
 }

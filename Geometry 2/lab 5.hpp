@@ -52,7 +52,8 @@ void color_matching(unsigned char* input_image, unsigned char* output_image, int
         // Advect initial point cloud.
         for (int i=0; i<n ; i++) {
             Vector L(input_image[projsource[i].second * input_C], input_image[projsource[i].second * input_C + 1],input_image[projsource[i].second * input_C + 2]);
-            add_update(L,scalar_product(V,projtarget[i].first - projsource[i].first));
+            Vector d((projtarget[i].first - projsource[i].first)*V[0], (projtarget[i].first - projsource[i].first)*V[1] ,(projtarget[i].first - projsource[i].first)*V[2]);
+            add_update(L,d);
             input_image[projsource[i].second*input_C] = L[0];
             input_image[projsource[i].second*input_C + 1] = L[1];
             input_image[projsource[i].second*input_C + 2] = L[2];
